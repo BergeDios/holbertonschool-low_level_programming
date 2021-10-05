@@ -14,11 +14,11 @@ int main(void)
 	n2 = 2;
 	nf = 0;
 	nfs = 0;
-	while (fn <= 4000000)
+	while (nf <= 4000000)
 	{
 		nf = n1 + n2;
 		n1 = n2;
-		n2 = fn;
+		n2 = nf;
 		if ((n1 % 2) == 0)
 		{
 			nfs += n1;
