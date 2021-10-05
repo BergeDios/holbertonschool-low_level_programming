@@ -1,12 +1,19 @@
 #include "main.h"
 
 /**
- * main - check the code
+ * print_alphabet - Print the alphabet
  *
- * Return: Always 0.
+ * Return: Always 0 (Success)
  */
-int main(void)
+
+void print_alphabet(void)
 {
-	print_alphabet();
-	return (0);
+	int i;
+
+	for (i = 97; i <= 122; i++)
+	{
+		_putchar(i);
+	}
+	_putchar(10);
+	return;
 }
