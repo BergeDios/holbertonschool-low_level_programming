@@ -13,7 +13,7 @@ int main(void)
 	n1 = 1;
 	n2 = 2;
 	printf("%.0f, %.0f", n1, n2);
-	for (c = 0; c < 96; c++)
+	for (c = 0; c < 94; c++)
 	{
 		nf = n1 + n2;
 		printf(", %.0f", nf);
