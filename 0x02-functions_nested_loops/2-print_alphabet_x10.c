@@ -16,7 +16,11 @@ void print_alphabet_x10(void)
 	}
 }
 
-/*print alphabet*/
+/**
+ * print_alphabet - print alphabet followed by a new line
+ *
+ * Return: void
+ */
 void print_alphabet(void)
 {
 	int i;
