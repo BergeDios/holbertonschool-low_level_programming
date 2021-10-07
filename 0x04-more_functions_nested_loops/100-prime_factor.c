@@ -7,8 +7,8 @@
 
 int main(void)
 {
-	long unsigned num = 612852475143;
-	long unsigned divisor = 2;
+	unsigned long num = 612852475143;
+	unsigned long divisor = 2;
 
 	while (divisor < num)
 	{
