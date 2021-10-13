@@ -6,11 +6,11 @@
  *Return: string length
  */
 
-int _strlen(char *s);
+int _strlen(char *s)
 {
 	int j = 0;
 
-	for (; j <= *s; j++)
+	while (s[j] != 0)
 	{
 		j++;
 	}
