@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h>
 
 /**
  * _strstr - locate and return pointer to first occurence of substring
@@ -14,7 +15,7 @@ char *_strstr(char *haystack, char *needle)
 	if (needle[0] == '\0')
 		return (haystack);
 
-	while (haystack[i] != '\0')
+	while (haystack[i])
 	{
 		if (haystack[i] == needle[0])
 		{
@@ -30,5 +31,5 @@ char *_strstr(char *haystack, char *needle)
 		}
 		i++;
 	}
-	return ('\0');
+	return (NULL);
 }
