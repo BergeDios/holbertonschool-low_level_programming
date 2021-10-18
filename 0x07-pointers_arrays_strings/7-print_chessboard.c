@@ -23,5 +23,4 @@ void print_chessboard(char (*a)[8])
 	row++;
 	column = 0;
 	}
-	return;
 }
