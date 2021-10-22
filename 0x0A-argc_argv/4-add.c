@@ -24,7 +24,6 @@ int main(int argc, char *argv[])
 	{
 		while (argv[i][j] != '\0')
 		{
-			printf("entered second while");
 			if (argv[i][j] >= '0' && argv[i][j] <= '9')
 			{
 				j++;
