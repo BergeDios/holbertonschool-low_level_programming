@@ -4,7 +4,7 @@
 /**
  * free_grid - free a 2D grid
  * @grid: multidimensional array
- * @height
+ * @height: height of grid
  * Return: nothing
  */
 void free_grid(int **grid, int height)
