@@ -42,6 +42,5 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		else
 			concs[p] = s2[p - les1];
 	}
-	concs[p] = '\0';
 	return (concs);
 }
