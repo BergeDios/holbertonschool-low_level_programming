@@ -25,7 +25,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (les2 = 0; s2[les2] != '\0'; les2++)
 		;
 
-	if (n >= les2)
+	if (n > les2)
 		n = les2;
 
 	leconcs = les1 + n;
