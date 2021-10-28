@@ -40,12 +40,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		concs[p] = s1[p];
 		p++;
 	}
-	while (p <= (leconcs))
+	while (p < (leconcs))
 	{
 		concs[p] = s2[p2];
 		p++;
 		p2++;
 	}
 	concs[p] = '\0';
+
 	return (concs);
 }
