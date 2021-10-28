@@ -35,7 +35,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (concs == NULL)
 		return (NULL);
 
-	while (p <= les1)
+	while (p < les1)
 	{
 		concs[p] = s1[p];
 		p++;
