@@ -5,14 +5,14 @@
 /**
  * struct all - struct all
  *
- *@char: letter for possible formats
+ *@lf: letter for possible formats
  *@f: function associated
  */
 typedef struct all
 {
 	char *lf;
 	void (*f)(va_list ap);
-}datatype;
+} datatype;
 
 void print_char(va_list ap);
 void print_integer(va_list ap);
