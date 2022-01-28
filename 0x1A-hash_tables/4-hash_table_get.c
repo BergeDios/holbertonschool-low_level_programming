@@ -9,23 +9,16 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	const unsigned char *keydup = (const unsigned char *)key;
 	unsigned long int k_idx = 0;
-	char *value;
 	hash_node_t *head;
-
-	k_idx = key_index(keydup, ht->size);
 
 	if (!key || !ht)
 		return (NULL);
+	k_idx = key_index(keydup, ht->size);
 	head = ht->array[k_idx];
-	if (!head)
-		return (NULL);
 	while (head != NULL)
 	{
 		if (strcmp(head->key, key) == 0)
-		{
-			value = head->value;
-			return (value);
-		}
+			return (head->value);
 		head = head->next;
 	}
 	return (NULL);
