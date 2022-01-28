@@ -10,14 +10,16 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	const unsigned char *keydup = (const unsigned char *)key;
 	unsigned long int k_idx = 0;
 	char *value;
+	hash_node_t *head;
 
 	k_idx = key_index(keydup, ht->size);
 
 	if (key == NULL || !ht || *key == '\0')
 		return (NULL);
-	if (!ht->array[k_idx])
+	head = ht->array[k_idx];
+	if (!head)
 		return (NULL);
-	value = ht->array[k_idx]->value;
+	value = head->value;
 
 
 	if (value != NULL)
