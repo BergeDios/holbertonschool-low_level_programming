@@ -13,7 +13,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	k_idx = key_index(keydup, ht->size);
 
-	if (key == NULL || !ht)
+	if (key == NULL || !ht || *key == '\0')
 		return (NULL);
 	if (!ht->array[k_idx])
 		return (NULL);
@@ -24,5 +24,5 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	{
 		return (value);
 	}
-	return (value);
+	return (NULL);
 }
