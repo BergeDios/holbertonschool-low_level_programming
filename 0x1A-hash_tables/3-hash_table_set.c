@@ -15,8 +15,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (!ht)
 		return (0);
-	if (!value)
-		return (0);
 	if (key == NULL || *key == '\0')
 		return (0);
 	k_idx = key_index(keydup, ht->size);
