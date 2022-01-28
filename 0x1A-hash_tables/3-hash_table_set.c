@@ -11,20 +11,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int k_idx = 0;
 	const unsigned char *keydup = (const unsigned char *)key;
+	hash_node_t *target;
 
 	if (key == NULL || *key == '\0')
 		return (0);
 	k_idx = key_index(keydup, ht->size);
 
-	if (add_node_ht((ht->array[k_idx]), key, value) == NULL)
-
+	target = add_node_ht(&(ht->array[k_idx]), key, value);
+	if (target == NULL)
 		return (0);
-	else
-		return (1);
-
-
-
-
+	return (1);
 }
 
 /**
@@ -34,7 +30,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  * @value: value to be associated with key in node
  * Return: address of new node or NULL if it failed
  */
-hash_node_t *add_node_ht(hash_node_t *ht, const char *key, const char *value)
+hash_node_t *add_node_ht(hash_node_t **ht, const char *key, const char *value)
 {
 	hash_node_t *new_node;
 
@@ -44,7 +40,7 @@ hash_node_t *add_node_ht(hash_node_t *ht, const char *key, const char *value)
 
 	new_node->key = strdup(key);
 	new_node->value = strdup(value);
-	new_node->next = ht;
-	ht = new_node;
+	new_node->next = *ht;
+	*ht = new_node;
 	return (new_node);
 }
