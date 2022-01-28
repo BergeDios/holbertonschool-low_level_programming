@@ -33,12 +33,23 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  */
 hash_node_t *add_node_ht(hash_node_t **ht, const char *key, const char *value)
 {
-	hash_node_t *new_node;
+	hash_node_t *new_node, *tmp;
 
+	tmp = *ht;
 	new_node = malloc(sizeof(hash_node_t));
 	if (!new_node || key == NULL)
 		return (NULL);
 
+	while (tmp)
+	{
+		if (strcmp(key, tmp->key) == 0)
+		{
+			free(tmp->value);
+			tmp->value = strdup(value);
+			return (tmp);
+		}
+		tmp = tmp->next;
+	}
 	new_node->key = strdup(key);
 	new_node->value = strdup(value);
 	new_node->next = *ht;
