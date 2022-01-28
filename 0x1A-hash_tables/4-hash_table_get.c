@@ -14,17 +14,19 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	k_idx = key_index(keydup, ht->size);
 
-	if (key == NULL || !ht || *key == '\0')
+	if (!key || !ht)
 		return (NULL);
 	head = ht->array[k_idx];
 	if (!head)
 		return (NULL);
-	value = head->value;
-
-
-	if (value != NULL)
+	while (head != NULL)
 	{
-		return (value);
+		if (strcmp(head->key, key) == 0)
+		{
+			value = head->value;
+			return (value);
+		}
+		head = head->next;
 	}
 	return (NULL);
 }
