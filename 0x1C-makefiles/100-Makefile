@@ -22,5 +22,5 @@ fclean:
 	oclean
 	clean
 re:
-	fclean
+	oclean
 	all
