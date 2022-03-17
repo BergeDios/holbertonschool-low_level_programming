@@ -1,0 +1,12 @@
+# _*_ MAKEFILE _*_
+
+all: school
+
+school: school.o main.o m.h
+	gcc main.c school.c -o school
+
+school.o: school.c m.h
+	gcc -c school.c
+
+main.o: main.c m.h
+	gcc -c main.c
