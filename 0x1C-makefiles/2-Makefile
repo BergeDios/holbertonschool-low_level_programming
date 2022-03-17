@@ -1,0 +1,14 @@
+# _*_ MAKEFILE _*_
+
+
+CC = gcc
+SRC = school.c main.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+
+all: $(NAME)
+
+school: $(OBJ) m.h
+	$(CC) $(OBJ) -o $(NAME)
+
+
