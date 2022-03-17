@@ -27,6 +27,6 @@ def island_perimeter(grid):
                 if col == 0 or grid[row][col - 1] == 0:
                     perimetro += 1
                 # manejando ultimo numero y siguiente
-                if col == len((grid[0]) - 1) or grid[row][col + 1] == 0:
+                if col == (len(grid[0]) - 1) or grid[row][col + 1] == 0:
                     perimetro += 1
     return perimetro
