@@ -1,6 +1,4 @@
 # _*_ MAKEFILE _*_
-
-
 CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
@@ -13,10 +11,10 @@ school: $(OBJ) m.h
 	$(CC) $(OBJ) -o $(NAME)
 .PHONY: clean
 clean: 
-	$(RM) -f *~ *.swp $(NAME)
+	$(RM) *~ *.swp $(NAME)
 .PHONY: oclean
 oclean:
-	$(RM) -f *.o
+	$(RM) $(OBJ)
 .PHONY: fclean
 fclean:
 	oclean
