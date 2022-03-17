@@ -1,24 +1,25 @@
-.PHONY: all clean oclean fclean re
-
-
+# -*- Makefile with variables-*-
 CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
-all: $(OBJ) m.h
+all: $(NAME)
+
+$(NAME): $(OBJ) m.h
 	$(CC) $(OBJ) -o $(NAME)
 
-clean: 
-	$(RM) *~ *.swp $(NAME)
+.PHONY: fclean
+fclean: clean oclean
 
+.PHONY: clean
+clean:
+	$(RM) *.swp *~ $(NAME)
+
+.PHONY: oclean
 oclean:
 	$(RM) $(OBJ)
 
-fclean:
-	oclean
-	clean
-re:
-	oclean
-	all
+.PHONY: re
+re: fclean all 
