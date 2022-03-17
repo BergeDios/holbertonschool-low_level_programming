@@ -1,12 +1,9 @@
 # _*_ MAKEFILE _*_
 
 CC = gcc
-SRC = *.c
+SRC = main.c school.c
 
 all: school
 
-school: objects
+school: $(SRC)
 	$(CC) $(SRC) -o school
-
-objects: $(SRC)
-	$(CC) -c $(SRC)
