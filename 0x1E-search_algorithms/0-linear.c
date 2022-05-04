@@ -12,7 +12,7 @@ int linear_search(int *array, size_t size, int value)
 	int idx;
 
 	if (!array)
-		return(-1);
+		return (-1);
 
 	for (idx = 0; idx < (int)size; idx++)
 	{
